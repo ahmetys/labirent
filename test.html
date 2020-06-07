@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #test {
+            width: 250px;
+            height: 600px;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test"></div>
+    <script>
+        var container = document.querySelector("#test");
+
+        container.addEventListener("touchstart", startTouch, false);
+        container.addEventListener("touchmove", moveTouch, false);
+
+        // Swipe Up / Down / Left / Right
+        var initialX = null;
+        var initialY = null;
+
+        function startTouch(e) {
+            initialX = e.touches[0].clientX;
+            initialY = e.touches[0].clientY;
+        };
+
+        function moveTouch(e) {
+            if (initialX === null) {
+                return;
+            }
+
+            if (initialY === null) {
+                return;
+            }
+
+            var currentX = e.touches[0].clientX;
+            var currentY = e.touches[0].clientY;
+
+            var diffX = initialX - currentX;
+            var diffY = initialY - currentY;
+
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                // sliding horizontally
+                if (diffX > 0) {
+                    // swiped left
+                    alert("swiped left");
+                } else {
+                    // swiped right
+                    alert("swiped right");
+                }
+            } else {
+                // sliding vertically
+                if (diffY > 0) {
+                    // swiped up
+                    alert("swiped up");
+                } else {
+                    // swiped down
+                    alert("swiped down");
+                }
+            }
+
+            initialX = null;
+            initialY = null;
+
+            e.preventDefault();
+        };
+    </script>
+</body>
+
+</html>

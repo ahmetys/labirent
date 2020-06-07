@@ -1,0 +1,79 @@
+body {
+    margin: auto 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    background: linear-gradient(90deg, rgba(0, 218, 249, 1) 0%, rgba(145, 239, 255, 1) 50%, rgba(0, 212, 255, 1) 100%);
+}
+
+h1 {
+    color: #f60052;
+    text-align: center;
+}
+
+
+
+button {
+    padding: 10px 15px;
+    font-size: 1.25rem;
+    font-family: Tahoma;
+    background: linear-gradient(90deg, #f60052 0%, #ee9db8 50%, #f60052 100%);
+    color: rgb(65, 3, 20);
+
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 5px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.map {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px;
+    position: relative;
+}
+
+.footer {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #f60052;
+    font-weight: bold;
+}
+
+.cell {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.player {
+    background-color: #f60052;
+    border-radius: 100%;
+    width: 13px;
+    height: 13px;
+}
